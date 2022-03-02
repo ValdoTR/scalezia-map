@@ -883,12 +883,12 @@
         {
          "name":"mapLink",
          "type":"string",
-         "value":"https:\/\/valdotr.github.io\/wa-internal-map\/map.json"
+         "value":"https:\/\/valdotr.github.io\/scalezia-map\/map.json"
         }, 
         {
          "name":"mapName",
          "type":"string",
-         "value":"WA Village"
+         "value":"Welcome"
         }, 
         {
          "name":"script",
