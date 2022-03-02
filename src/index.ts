@@ -25,15 +25,15 @@ const config = [
             {
                 label: 'LinkedIn',
                 className: 'primary',
-                callback: () => WA.nav.openTab('https://www.linkedin.com/company/scalezia'),
+                callback: () => WA.nav.openTab('https://www.linkedin.com/company/scalezia/'),
             },
         ]
     }
 ]
 
 // Popups
-WA.room.onEnterZone('followUs1', () => openPopup('followUs1'));
-WA.room.onLeaveZone('followUs1', closePopup);
+WA.room.onEnterZone('followUs', () => openPopup('followUs'));
+WA.room.onLeaveZone('followUs', closePopup);
 
 // Popup management functions
 function openPopup(zoneName: string) {
