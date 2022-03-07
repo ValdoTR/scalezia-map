@@ -1,17 +1,31 @@
 /// <reference path="../node_modules/@workadventure/iframe-api-typings/iframe_api.d.ts" />
-import {bootstrapExtra} from '@workadventure/scripting-api-extra'
+import { bootstrapExtra } from "@workadventure/scripting-api-extra";
 
 console.log('Script started successfully');
 
-async function extendedFeatures() {
-    try {
-        await bootstrapExtra()
-        console.log('Scripting API Extra loaded successfully');
-    } catch (error) {
-        console.error('Scripting API Extra ERROR',error);
+// Waiting for the API to be ready
+WA.onInit().then(() => {
+    console.log('Scripting API ready');
+    console.log('Player tags: ',WA.player.tags)
+    
+    // Popups
+    WA.room.onEnterZone('followUs', () => openPopup('followUs'));
+    WA.room.onLeaveZone('followUs', closePopup);
+
+    // Show/hide amphi door
+    if (WA.player.tags.includes('admin') || WA.player.tags.includes('scalezia') || WA.player.tags.includes('premium')){
+        WA.room.hideLayer('closedAmphi')
+        WA.room.showLayer('openAmphi')
+    } else {
+        WA.room.showLayer('closedAmphi')
+        WA.room.hideLayer('openAmphi')
     }
-}
-extendedFeatures();
+
+    // The line below bootstraps the Scripting API Extra library that adds a number of advanced properties/features to WorkAdventure
+    bootstrapExtra().then(() => {
+        console.log('Scripting API Extra ready');
+    }).catch(e => console.error(e));
+}).catch(e => console.error(e));
 
 // Manage popups
 let currentZone: string;
@@ -30,10 +44,6 @@ const config = [
         ]
     }
 ]
-
-// Popups
-WA.room.onEnterZone('followUs', () => openPopup('followUs'));
-WA.room.onLeaveZone('followUs', closePopup);
 
 // Popup management functions
 function openPopup(zoneName: string) {
