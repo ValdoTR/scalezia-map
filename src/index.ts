@@ -2,7 +2,6 @@
 import { bootstrapExtra } from "@workadventure/scripting-api-extra";
 
 console.log('Script started successfully');
-console.log('V2');
 
 // Waiting for the API to be ready
 WA.onInit().then(() => {
