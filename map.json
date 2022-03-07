@@ -347,6 +347,16 @@
          "opacity":1,
          "properties":[
                 {
+                 "name":"autoClose",
+                 "type":"bool",
+                 "value":true
+                }, 
+                {
+                 "name":"autoOpen",
+                 "type":"bool",
+                 "value":true
+                }, 
+                {
                  "name":"doorVariable",
                  "type":"string",
                  "value":"officeDoor"
