@@ -2135,7 +2135,7 @@
         {
          "columns":10,
          "firstgid":28191,
-         "image":"..\/..\/..\/..\/..\/..\/..\/..\/..\/media\/shared\/Documents\/Ubuntu\/WorkAdventure\/Projects\/clients\/Scalezia\/src\/assets\/WA_CTA.png",
+         "image":"src\/assets\/WA_CTA.png",
          "imageheight":160,
          "imagewidth":320,
          "margin":0,
